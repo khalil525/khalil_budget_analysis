@@ -49,7 +49,7 @@ st.markdonwn('---')
 
 st.markdown(f'You have ${Remaining} after your expenses!') 
 
-st.markdonwn('---') 
+#st.markdonwn('---') 
 
 
 # ---- ROW B ---- 
