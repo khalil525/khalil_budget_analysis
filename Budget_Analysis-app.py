@@ -121,16 +121,19 @@ Business = st.sidebar.slider('What percentage of your income would you like to g
 
 
 # ---- DATA ---- 
-data = [["Emergency Savings", (Emergency * Remaining) - Emergency_Actual],
-       ["Retirement Savings", (Emergency * Remaining) - Emergency_Actual],
-       ["Food/Drinks", (Emergency * Remaining) - Emergency_Actual]
-       ["Transportation Savings", (Emergency * Remaining) - Emergency_Actual]
-       ["Entertainment", (Emergency * Remaining) - Emergency_Actual]
-       ["MISC", (Emergency * Remaining) - Emergency_Actual]
-       ["Debt Payments", (Emergency * Remaining) - Emergency_Actual]
-       ["Bussiness/Investing", (Emergency * Remaining) - Emergency_Actual]]
+# data = [["Emergency Savings", (Emergency * Remaining) - Emergency_Actual],
+ #      ["Retirement Savings", (Emergency * Remaining) - Emergency_Actual],
+   #    ["Food/Drinks", (Emergency * Remaining) - Emergency_Actual]
+    #   ["Transportation Savings", (Emergency * Remaining) - Emergency_Actual]
+     #  ["Entertainment", (Emergency * Remaining) - Emergency_Actual]
+  #     ["MISC", (Emergency * Remaining) - Emergency_Actual]
+  #     ["Debt Payments", (Emergency * Remaining) - Emergency_Actual]
+   #    ["Bussiness/Investing", (Emergency * Remaining) - Emergency_Actual]]
 
-df = pd.DataFrame(data, columns = ['Budget Category', 'Difference of Budget and Expenditures'] )
+
+data = { "Budget Category" : ["Emergency Savings"],
+        "Difference of Budget and Expenditures" : [ Emergency * Remaining - Emergency_Acutal] }
+df = pd.DataFrame(data )
 st.dataframe(df) 
 
 
