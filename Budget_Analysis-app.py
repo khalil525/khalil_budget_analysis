@@ -121,10 +121,15 @@ Business = st.sidebar.slider('What percentage of your income would you like to g
    #    ["Bussiness/Investing", (Emergency * Remaining) - Emergency_Actual]]
 
 
+
+emergency_actual = Emergency * Remaining - Emergency_Actual
+
+
+
 data = { "Budget Category" : ["Emergency Savings", "Retirement Savings","Food/Drinks",
                              "Transportation", "Entertainment", "MISC", "Debt Payments",
                              "Business/Investments"],
-        "Difference of Budget and Expenditures" : [ Emergency * Remaining - Emergency_Actual,
+        "Difference of Budget and Expenditures" : [ emergency_actual,
                                                    Retirement * Remaining - Retirement_Actual,
                                                    Food_and_Drinks * Remaining - Food_and_Drinks_Actual,
                                                    Transportation * Remaining - Transportation_Actual,
