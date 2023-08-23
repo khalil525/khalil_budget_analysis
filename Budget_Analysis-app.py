@@ -45,7 +45,7 @@ with col3:
     
 Remaining = Income - Expenses - Left_Overs
 
- st.markdown('---') 
+st.markdown('---') 
 
 st.markdown(f'You have ${Remaining} after your expenses!') 
 
