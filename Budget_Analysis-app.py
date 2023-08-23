@@ -29,7 +29,7 @@ st.set_page_config(page_title = "Budget Analysis",
 
 # ---- ROW A ---- 
 
-st.markdown('### Lets talk MONEY :bar:') 
+st.markdown('### Lets talk MONEY $$$') 
 
 col1, col2, col3 = st.columns(3)
 
