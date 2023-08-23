@@ -132,7 +132,7 @@ Business = st.sidebar.slider('What percentage of your income would you like to g
 
 
 data = { "Budget Category" : ["Emergency Savings"],
-        "Difference of Budget and Expenditures" : [ Emergency * Remaining - Emergency_Acutal] }
+        "Difference of Budget and Expenditures" : [ Emergency * Remaining - Emergency_Actual] }
 df = pd.DataFrame(data )
 st.dataframe(df) 
 
