@@ -156,6 +156,8 @@ st.dataframe(df)
                            # template = "plotly_white")
 
 # st.plotly_chart(fig_funnl_chart)c
+st.markdown('---') 
+st.markdown('Budget Tracker') 
 
 st.bar_chart(data = df, x = "Budget Category", y = 'Difference of Budget and Expenditures')
 
