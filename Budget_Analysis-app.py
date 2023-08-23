@@ -34,14 +34,11 @@ st.markdown('### Lets talk MONEY')
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    Income = st.slider('What is your bi-weekly take home pay?',
-                           0, 10000, 1000)
+    Income = st.number_input('What is your bi-weekly take home pay?')
 with col2:
-    Expenses = st.slider('What is the total of your bi-weekly expenses?',
-                      0, 10000, 1000)
+    Expenses = st.number_input('What is the total of your bi-weekly expenses?')
 with col3:
-    Left_Overs = st.slider('Is there a certain amount of money you want have left over by your next pay check?',
-                             0, 10000, 1000)
+    Left_Overs = st.number_input('Is there a certain amount of money you want have left over by your next pay check?')
     
 Remaining = Income - Expenses - Left_Overs
 
@@ -57,34 +54,27 @@ st.markdown('---')
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    Emergency_Actual = st.slider('How much have you put into your Emergency Savings?',
-                           0, 10000, 1000)
+    Emergency_Actual = st.number_input('How much have you put into your Emergency Savings?')
 with col2:
-    Retirement_Actual = st.slider('How much money have you put into Your Retirement Savings?',
-                      0, 10000, 1000)
+    Retirement_Actual = st.number_input('How much money have you put into Your Retirement Savings?')
 with col3:
-    Food_and_Drinks_Actual = st.slider('How much money have you spent on food and drinks?',
-                             0, 10000, 1000)
+    Food_and_Drinks_Actual = st.number_input('How much money have you spent on food and drinks?')
 with col4:
-    Transportation_Actual = st.slider('How much money have you spent on Transportation?',
-                             0, 10000, 1000)
+    Transportation_Actual = st.number_input('How much money have you spent on Transportation?')
     
 # ---- ROW C ---- 
+st.markdown('---') 
 
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    Entertainment_Actual = st.slider('How much money have you spent on entertainment?',
-                           0, 10000, 1000)
+    Entertainment_Actual = st.number_input('How much money have you spent on entertainment?')
 with col2:
-    Miscellaneous_Actual = st.slider('How much money have you pulled from your Miscellaneous fund?',
-                      0, 10000, 1000)
+    Miscellaneous_Actual = st.number_input('How much money have you pulled from your Miscellaneous fund?')
 with col3:
-    Debt = st.slider('How much money have you put towards your debt?',
-                             0, 10000, 1000)
+    Debt_Actual = st.number_input('How much money have you put towards your debt?')
 with col4:
-    Business_Actual = st.slider('How much money have you invested in your business?',
-                             0, 10000, 1000)
+    Business_Actual = st.number_input('How much money have you invested in your business?')
 
 # ---- SIDEBAR ---- 
 
@@ -131,8 +121,17 @@ Business = st.sidebar.slider('What percentage of your income would you like to g
    #    ["Bussiness/Investing", (Emergency * Remaining) - Emergency_Actual]]
 
 
-data = { "Budget Category" : ["Emergency Savings"],
-        "Difference of Budget and Expenditures" : [ Emergency * Remaining - Emergency_Actual] }
+data = { "Budget Category" : ["Emergency Savings", "Retirement Savings","Food/Drinks",
+                             "Transportation", "Entertainment", "MISC", "Debt Payments",
+                             "Business/Investments"],
+        "Difference of Budget and Expenditures" : [ Emergency * Remaining - Emergency_Actual],
+       [ Retirement * Remaining - Retirement_Actual],
+       [ Food_and_Drinks * Remaining - Food_and_Drinks_Actual],
+       [ Transportation * Remaining - Transportation_Actual],
+       [ Entertainment * Remaining - Entertainment_Actual],
+       [ MISC * Remaining - Miscellaneous_Actual],
+       [ Debt * Remaining - Debt_Actual],
+       [ Business * Remaining - Business_Actual]}
 df = pd.DataFrame(data )
 st.dataframe(df) 
 
