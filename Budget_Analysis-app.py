@@ -29,7 +29,7 @@ st.set_page_config(page_title = "Budget Analysis",
 
 # ---- ROW A ---- 
 
-st.markdown('<center> ### Lets talk MONEY :bar: </center>') 
+st.markdown('### Lets talk MONEY :bar:') 
 
 col1, col2, col3 = st.columns(3)
 
@@ -44,7 +44,7 @@ Remaining = Income - Expenses - Left_Overs
 
 st.markdown('---') 
 
-st.markdown(<center>f'You have ${Remaining} after your expenses!</center>') 
+st.markdown(f'You have ${Remaining} after your expenses!') 
 
 st.markdown('---') 
 
@@ -157,7 +157,7 @@ st.dataframe(df)
 
 # st.plotly_chart(fig_funnl_chart)c
 st.markdown('---') 
-st.markdown('<center>Budget Tracker</center') 
+st.markdown('Budget Tracker') 
 
 st.bar_chart(data = df, x = "Budget Category", y = 'Difference of Budget and Expenditures')
 
