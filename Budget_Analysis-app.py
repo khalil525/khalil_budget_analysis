@@ -145,5 +145,5 @@ st.dataframe(df)
 
 # st.plotly_chart(fig_funnl_chart)c
 
-st.bar_chart(data = df, y = "Budget Category', x = 'Difference of Budget and Expenditures')
+st.bar_chart(data = df, y = "Budget Category", x = 'Difference of Budget and Expenditures')
 
