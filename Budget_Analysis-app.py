@@ -104,6 +104,7 @@ Debt = st.sidebar.slider('What percentage of your income would you like to go to
 Business = st.sidebar.slider('What percentage of your income would you like to go towards funding your Business?',
                           0.01, 1.00, .10)
 
+st.markdown('---') 
 
 
 
@@ -137,6 +138,10 @@ data = { "Budget Category" : ["Emergency Savings", "Retirement Savings","Food/Dr
                                                    MISC * Remaining - Miscellaneous_Actual,
                                                    Debt * Remaining - Debt_Actual,
                                                    Business * Remaining - Business_Actual]}
+
+
+st.markdown('The table and chart below shows you how much money you have left to spend for the next two weeks in each Budget category based on the information provide.') 
+
 df = pd.DataFrame(data )
 st.dataframe(df) 
 
