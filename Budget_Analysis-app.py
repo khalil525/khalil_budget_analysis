@@ -138,10 +138,12 @@ st.dataframe(df)
 
 
 # ---- FUNNEL CHART  ---- 
-fig_funnl_chart = px.funnel(df, x='Difference of Budget and Expenditures', 
-                            y='Budget Category',
-                           title = "<b>Budget Tracker</b>",
-                           template = "plotly_white")
+# fig_funnl_chart = px.funnel(df, x='Difference of Budget and Expenditures', 
+                           # y='Budget Category',
+                           # title = "<b>Budget Tracker</b>",
+                           # template = "plotly_white")
 
-st.plotly_chart(fig_funnl_chart)
+# st.plotly_chart(fig_funnl_chart)c
+
+st.bar_chart(data = df, y = "Budget Category', x = 'Difference of Budget and Expenditures')
 
